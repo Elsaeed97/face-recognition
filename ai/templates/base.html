@@ -1,0 +1,93 @@
+{% load static %}
+<!DOCTYPE html> 
+<html lang="en"> 
+<head>
+	<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<title>{% block title%}{% endblock%}</title>
+	<!-- Styles -->
+    
+
+    <!--===============================================================================================-->
+        <link rel="stylesheet" type="text/css" href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %} ">
+    <!--===============================================================================================-->
+        <link rel="stylesheet" type="text/css" href="{% static 'fonts/font-awesome-4.7.0/css/font-awesome.min.css' %}">
+    <!--===============================================================================================-->
+        <link rel="stylesheet" type="text/css" href="{% static 'vendor/animate/animate.css' %}">
+    <!--===============================================================================================-->
+        <link rel="stylesheet" type="text/css" href="{% static 'vendor/select2/select2.min.css' %}">
+    <!--===============================================================================================-->
+        <link rel="stylesheet" type="text/css" href="{% static 'vendor/perfect-scrollbar/perfect-scrollbar.css' %}">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="{% static 'css/util.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
+    <!--===============================================================================================-->
+	<link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">  
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                  <ul class="navbar-nav">
+                    <li class="nav-item active">
+                      <a class="nav-link" href="{% url 'index'%}">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                    
+                      {% if request.user.is_authenticated %}
+                      <li class="nav-item active">
+                        <a class="nav-link" href="{% url 'profile' %}">Profile</a>
+                      </li>
+                        <li class="nav-item active">
+                        <a class="nav-link" href="{% url 'logout'%}">logout</a>
+                      </li>
+                              
+                      {% else %}
+                      <li class="nav-item active">
+                      <a class="nav-link" href="{% url 'register'%}">Register</a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="{% url 'login'%}">Login</a>
+                      </li>
+                      
+                      {% endif  %}
+                  </ul>
+                  
+                </div>
+            </div>  
+              </nav>
+              <div class="container">
+            {% block content %}{% endblock%}
+        </div>
+
+    	<!-- Scripts -->
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <!--===============================================================================================-->	
+	<script src="{% static 'vendor/jquery/jquery-3.2.1.min.js'%}"></script>
+    <!--===============================================================================================-->
+        <script src="{% static 'vendor/bootstrap/js/popper.js'%}"></script>
+        <script src="{% static 'vendor/bootstrap/js/bootstrap.min.js'%}"></script>
+    <!--===============================================================================================-->
+        <script src="{% static 'vendor/select2/select2.min.js'%}"></script>
+    <!--===============================================================================================-->
+        <script src="{% static 'vendor/perfect-scrollbar/perfect-scrollbar.min.js'%}"></script>
+        <script>
+            $('.js-pscroll').each(function(){
+                var ps = new PerfectScrollbar(this);
+    
+                $(window).on('resize', function(){
+                    ps.update();
+                })
+            });
+                
+            
+        </script>
+    <!--===============================================================================================-->
+	<script src="{% static 'js/main.js'%}"></script>
+</body>
+</html>

@@ -1,0 +1,50 @@
+{% extends 'base.html'%}
+{% load static %}
+<title>{% block title%} All Users Page {% endblock%}</title>
+{% block content %}
+	<div class="limiter"> 	
+		<div class="container-table100">
+			<div class="wrap-table100">
+				<div class="table100 ver1 m-b-110">      
+					<div class="table100-head">              
+						<table>
+							<thead>
+								<tr class="row100 head">
+									<th class="cell100 column1">ID</th>
+									<th class="cell100 column2">NAME</th>
+									<th class="cell100 column3">PHONE</th>
+									<th class="cell100 column4">EMAIL</th>
+									<th class="cell100 column5">PHOTO</th>
+								</tr>
+							</thead>
+						</table>
+					</div>
+
+					<div class="table100-body js-pscroll">
+						<table>
+							<tbody>
+							
+								<tr class="row100 body">
+									<td class="cell100 column1">Playful </td>
+									<td class="cell100 column2">Yoga</td>
+									<td class="cell100 column3">8:00 AM - 9:00 AM</td>
+									<td class="cell100 column4">Donna Wilson</td>
+									<td class="cell100 column5">10</td>
+                </tr>
+                <tr class="row100 body">
+                    <td class="cell100 column1">Playful </td>
+                    <td class="cell100 column2">Yoga</td>
+                    <td class="cell100 column3">8:00 AM - 9:00 AM</td>
+                    <td class="cell100 column4">Donna Wilson</td>
+                    <td class="cell100 column5">10</td>
+                  </tr>
+						
+							</tbody>
+						</table>
+          </div>          
+				</div>
+			</div>
+    </div> 
+  </div>
+
+{% endblock%}
